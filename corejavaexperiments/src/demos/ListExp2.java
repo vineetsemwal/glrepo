@@ -12,8 +12,8 @@ public class ListExp2 {
         list.add(new Customer(1, "sohail"));
         list.add(new Customer(4, "abhishek"));
         list.add(new Customer(3,"aravinth"));
-       // list.sort(new CustomerIDComparator());
-        Collections.sort(list);
+       list.sort(new CustomerIDComparator());
+    //    Collections.sort(list);
         for (Customer e:list){
             System.out.println(e.getId()+"-"+e.getName());
         }

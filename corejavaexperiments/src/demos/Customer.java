@@ -39,6 +39,11 @@ public class Customer implements Comparable<Customer>{
     }
 
     @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
     public int compareTo(Customer arg) {
         return this.id-arg.id;
     }
