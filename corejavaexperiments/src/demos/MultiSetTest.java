@@ -7,12 +7,7 @@ import java.util.Set;
 public class MultiSetTest {
 
     public static void main(String args[]){
-        MultiSet<Integer,String>store=new MultiSet<>(){
-            @Override
-            protected Set<String> newSet() {
-                return new LinkedHashSet<>();
-            }
-        };
+        MultiSet<Integer,String>store=new MultiSet<>();
 
         store.add(2,"mohan");
         store.add(2, "anant");

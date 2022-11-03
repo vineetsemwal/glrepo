@@ -47,4 +47,9 @@ public class Customer implements Comparable<Customer>{
     public int compareTo(Customer arg) {
         return this.id-arg.id;
     }
+
+    @Override
+    public String toString() {
+        return id+"-"+name;
+    }
 }
