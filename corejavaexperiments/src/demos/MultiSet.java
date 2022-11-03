@@ -38,7 +38,7 @@ public class MultiSet<K, V> {
         }
     }
 
-    Set<K> keySet() {
+    public Set<K> keySet() {
         return internalMap.keySet();
     }
 
@@ -51,7 +51,7 @@ public class MultiSet<K, V> {
         return internalMap.get(key);
     }
 
-    Set<V> newSet() {
+   protected Set<V> newSet() {
         return new HashSet<>();
     }
 

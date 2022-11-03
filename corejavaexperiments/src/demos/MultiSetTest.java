@@ -9,7 +9,7 @@ public class MultiSetTest {
     public static void main(String args[]){
         MultiSet<Integer,String>store=new MultiSet<>(){
             @Override
-            Set<String> newSet() {
+            protected Set<String> newSet() {
                 return new LinkedHashSet<>();
             }
         };
