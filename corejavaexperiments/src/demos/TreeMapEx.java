@@ -23,25 +23,25 @@ public class TreeMapEx {
         Set<Integer> keys = map.keySet();
         for (int key : keys) {
             Customer value = map.get(key);
-            System.out.print("key=" + key+",");
+            System.out.print("key=" + key + ",");
             demo.display(value);
         }
         System.out.println("iterating using entries");
         Set<Map.Entry<Integer, Customer>> entries = map.entrySet();
         for (Map.Entry<Integer, Customer> entry : entries) {
-            System.out.print("key=" + entry.getKey()+",");
+            System.out.print("key=" + entry.getKey() + ",");
             demo.display(entry.getValue());
         }
 
-        int firstKey=map.firstKey();
-        System.out.println("dirst key="+firstKey);
-        int lastKey=map.lastKey();
-        System.out.println("last key="+lastKey);
+        int firstKey = map.firstKey();
+        System.out.println("dirst key=" + firstKey);
+        int lastKey = map.lastKey();
+        System.out.println("last key=" + lastKey);
         System.out.println("subap from key 2 to 4");
-        Map<Integer,Customer>submap=map.subMap(2,4);
-        for (int key:submap.keySet()){
+        Map<Integer, Customer> submap = map.subMap(2, 4);
+        for (int key : submap.keySet()) {
             Customer value = map.get(key);
-            System.out.print("key=" + key+",");
+            System.out.print("key=" + key + ",");
             demo.display(value);
         }
 
