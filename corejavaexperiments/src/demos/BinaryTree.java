@@ -42,7 +42,6 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public boolean findElement(T element) {
-        Node parent;
         Node current = root;
         while (current != null) {
             System.out.println("visited="+current.data);
