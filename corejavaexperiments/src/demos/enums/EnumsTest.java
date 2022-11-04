@@ -9,6 +9,10 @@ public class EnumsTest {
         String lunchEndTime=lunch.getEndTime();
         String morningTeaStartTime= morningTea.getStartTime();
         String morningTeaEndTime=morningTea.getEndTime();
+        DayBreak myVal=DayBreak.LUNCH;
+        if(myVal==DayBreak.LUNCH){
+            System.out.println("mval contain lunch constant");
+        }
         System.out.println("constant="+lunch+" startTime="+lunchStartTime+"endTime="+lunchEndTime);
         System.out.println("constant="+morningTea+" "+morningTeaStartTime+" endtime="+morningTeaEndTime);
 
