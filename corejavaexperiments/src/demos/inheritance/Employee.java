@@ -5,9 +5,15 @@ public class Employee {
     private int id;
     private String name;
 
-    public Employee(int id, String name){
-        this.id=id;
-        this.name=name;
+
+    public Employee() {
+        id = -1;
+        name = "not-int";
+    }
+
+    public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
