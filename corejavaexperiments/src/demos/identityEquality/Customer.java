@@ -1,6 +1,12 @@
 package demos.identityEquality;
 
-public class Customer implements Comparable<Customer>{
+/**
+ * Customer c1=new Customer(1,"abc")
+ * c1.setId(10)
+ *
+ *
+ */
+public class Customer {
     private int id;
     private String name;
     public Customer(int id, String name){
@@ -24,32 +30,23 @@ public class Customer implements Comparable<Customer>{
         this.name = name;
     }
 
-    // obj1.equals(obj2)
-
+    /**
+     *
+     * Customer c1=new Customer(1,"abc")
+     *  String c2="1,abc;
+     *  c1.equals(c2)
+     *
+     */
     @Override
     public boolean equals(Object arg) {
         if(this==arg){
             return true;
         }
-        if(arg==null || !arg.getClass().equals(Customer.class)){
+        if(arg==null || (arg.getClass()!=getClass())){
             return false;
         }
         Customer that=(Customer) arg;
         return id==that.id;
     }
 
-    @Override
-    public int hashCode() {
-        return id;
-    }
-
-    @Override
-    public int compareTo(Customer arg) {
-        return this.id-arg.id;
-    }
-
-    @Override
-    public String toString() {
-        return id+"-"+name;
-    }
 }
