@@ -1,0 +1,59 @@
+Product{
+
+ id : int
+
+name : String
+
+category: enum  // constants can be Phone, Laptop, Detergent, Vegetable, Fruit 
+
+}
+
+
+Phone extends Product{
+
+ ram: int
+ 
+ storage: int
+
+ model: string
+
+ price: int
+
+}
+
+Grocery extends Product{
+
+quantityInKg: double
+
+pricePerKG: int
+
+}
+
+Store{
+Map of id as key, Product as value 
+
+ findById(int id): Product
+
+findPhoneByName(String name, String model): Phone
+
+findGroceryByName(String name)
+
+addPhone(String name,String model,int ram, int storage) : Phone
+
+addGrocery(String name, doube quantityPerKG, int pricePerKG): Grocery
+
+changePhonePrice(int id, int newPrice)
+
+buyPhone(int id):Phone
+
+}
+
+
+Main class to test
+
+
+
+
+
+
+
