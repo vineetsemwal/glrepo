@@ -36,21 +36,21 @@ pricePerKG: int
 //Map of id as key, Product as value 
 interface IStore{
 
- findById(int id) throws InalidArgumentException: Product
+ findById(int id): Product throws InvalidArgumentException, ProductNotFoundException
 
 findPhoneByName(String name, String model) : Phone throws InvalidArgumentException
 
-findGroceryByName(String name)
+findGroceryByName(String name)  throws InvalidArgumentException, ProductNotFoundException
 
-addPhone(String name,String model,int ram, int storage, int units) : Phone throws InvalidArgumentException 
+addPhone(String name,String model,int ram, int storage, int units, int price) : Phone throws InvalidArgumentException 
 
-addGrocery(String name, doube quantityPerKG, int pricePerKG, quantity) throws InvalidArgumentException: Grocery
+addGrocery(String name, doube quantityPerKG, int pricePerKG, quantity): Grocery throws InvalidArgumentException
 
-changePhonePrice(int id, int newPrice)  throws InvalidArgumentException
+changePhonePrice(int id, int newPrice)  throws InvalidArgumentException, ProductNotFoundException
 
-buyPhone(int id):Phone  throws InalidArgumentException
+buyPhone(int id):Phone  throws InvalidArgumentException, ProductNotFoundException
 
-buyGrocery(int id, double desiredQuantity):Grocery throws  e  throws InvalidArgumentException
+buyGrocery(int id, double desiredQuantity):Grocery  throws InvalidArgumentException, ProductNotFoundException
 
 List<Product>findAll() //return list of  all products
 
