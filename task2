@@ -1,0 +1,67 @@
+// Validations + exceptions hanlding
+
+Product{
+
+ id : int
+
+name : String
+
+category: enum  // constants can be Phone, Laptop, Detergent, Vegetable, Fruit 
+
+}
+
+
+Phone extends Product{
+
+ ram: int
+ 
+ storage: int
+
+ model: string
+
+ price: int
+ units: int
+
+}
+
+Grocery extends Product{
+quantity: double
+
+quantityInKg: double
+
+pricePerKG: int
+
+}
+
+//Map of id as key, Product as value 
+interface IStore{
+
+ findById(int id) throws InalidArgumentException: Product
+
+findPhoneByName(String name, String model) : Phone throws InvalidArgumentException
+
+findGroceryByName(String name)
+
+addPhone(String name,String model,int ram, int storage, int units) : Phone throws InvalidArgumentException 
+
+addGrocery(String name, doube quantityPerKG, int pricePerKG, quantity) throws InvalidArgumentException: Grocery
+
+changePhonePrice(int id, int newPrice)  throws InvalidArgumentException
+
+buyPhone(int id):Phone  throws InalidArgumentException
+
+buyGrocery(int id, double desiredQuantity):Grocery throws  e  throws InvalidArgumentException
+
+List<Product>findAll() //return list of  all products
+
+}
+
+
+Main class to test
+
+//print 
+
+
+
+
+
