@@ -20,11 +20,13 @@ public class CollectionsLambda {
         list.forEach(consumer2);
         Comparator<String>comparator1=String::compareTo;
         list.sort(comparator1);
+        System.out.println("acending="+list);
         System.out.println("descending");
         Comparator<String>comparator2=(input1,input2)->{
            int compare= input2.compareTo(input1);
            return compare;
         };
         list.sort(comparator2);
+        System.out.println("sorted list="+list);
     }
 }
