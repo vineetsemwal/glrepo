@@ -1,0 +1,31 @@
+/*
+Use Functional Interface and Lambda concept 
+*/
+Employee{
+
+id: int
+name: String 
+
+int age
+}
+
+
+
+IEmployeeService{
+
+ add(String name, int age) :void throws InvalidArgumentException 
+
+ findEmployeesGreaterThanAgeDesecending(int age): List<Employee>  throws InvalidArgumentException // find employees greater than age and in descending order of age 
+ 
+ findEmployeesByName(String name): List<Employee> throws InvalidArgumentException // sorted in descending order by age
+ 
+ 
+}
+
+//Create implementation EmployeeServiceImpl implements IEmployeeService{
+//map of integer keys and Employee values 
+
+}
+
+
+
