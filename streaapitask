@@ -10,11 +10,16 @@ double price
 
 }
 
+interface IProductService{
+
+add(String name, double price):void  throws InvalidArgumentException
 
 // return list of names of products where the products have price greater than price argument
-List<String> findProductsGreaterThanPrice(double priceArg)
+List<String> findProductsGreaterThanPrice(double priceArg) throws InvalidArgumentException
 
 // find lowest available price 
-Optional<Double>findCheapestProduct()
+Optional<Double>findCheapestProductPrice()
 
+
+}
 
