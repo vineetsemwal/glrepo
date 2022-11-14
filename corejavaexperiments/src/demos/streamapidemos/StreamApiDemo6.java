@@ -1,10 +1,13 @@
 package demos.streamapidemos;
 
-import java.util.*;
-import java.util.function.Consumer;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 
-public class StreamApiDemo5 {
+public class StreamApiDemo6 {
     public static void main(String args[]) {
         List<Integer> list = new ArrayList<>();
 
@@ -15,8 +18,8 @@ public class StreamApiDemo5 {
         list.add(10);
 
         Stream<Integer> stream1 = list.stream();
-        Comparator<Integer>comparator= (a,b)->a-b;
-        Optional<Integer> optional=stream1.min(comparator);
+        BinaryOperator<Integer>operator=(a,b)->a+b;
+        Optional<Integer> optional=stream1.reduce(operator);
         if(optional.isPresent()){
             Integer value=optional.get();
             System.out.println("value="+value);

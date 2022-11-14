@@ -1,0 +1,20 @@
+Do with Stream Api
+
+Product{
+
+Integr id
+
+String name
+
+double price
+
+}
+
+
+// return list of names of products where the products have price greater than price argument
+List<String> findProductsGreaterThanPrice(double priceArg)
+
+// find lowest available price 
+Optional<Double>findCheapestProduct()
+
+
