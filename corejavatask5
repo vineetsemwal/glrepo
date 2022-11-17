@@ -1,0 +1,56 @@
+// Do in layered architecture pattern
+
+
+Customer{
+long id
+
+String name
+
+int age
+
+}
+
+
+
+interface ICustomerDao{
+
+ void add(Customer customer)
+ 
+ void update(Customer customer)
+ 
+ Customer findById(long id)
+ 
+ List<Customer> findAll()
+
+List<Customer> findAllDescendingOrderByAge()
+
+
+
+}
+
+interface IProductService{
+
+
+Customer register(String name, int age)
+
+Customer changeName(int id, Sting newName)
+
+Customer findById(long id)
+
+List<Customer> findAllDescendingOrderByAge()
+
+List<Customer> findAllCustomerGreaterThanAgeDescendOrder(int age)
+
+int countCustomersLesserThanAge(int age)
+
+}
+
+Validations
+1) min age is 10, max 100
+2) name , min chars 2, max 20
+3)id cant't be zero or negative
+
+
+
+
+
