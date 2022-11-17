@@ -1,0 +1,37 @@
+purchaseditems
+
+{
+id integer
+
+name charater varying -max size 20
+
+price -- precision 8, scale 3
+
+orderid-- char varying max 10 -fk id of createdorders
+
+}
+
+
+createdorders{
+
+id - char varying max 10
+
+createdby - integer  --fk id of customers
+
+
+
+}
+
+customers{
+id-- integer
+
+name- char varying 20
+
+}
+
+
+1) Fetch details of all items along with customer name when orderid is given
+
+2) fetch details of all customers who have not created any order
+
+3) fetch details of all orders along with customer details created by customer with id =2
