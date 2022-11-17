@@ -12,4 +12,5 @@ public interface IProductService {
 
     Product changePrice(int id, double newPrice) throws InvalidArgumentException,  ProductNotFoundException;
 
+
 }

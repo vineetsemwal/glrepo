@@ -21,4 +21,10 @@ public class ProductDaoImpl implements IProductDao{
        return Optional.of(product);
     }
 
+    @Override
+    public void update(Product product){
+        ProductStore.map.put(product.getId(),product);
+
+    }
+
 }

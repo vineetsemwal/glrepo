@@ -47,6 +47,7 @@ public class ProductServiceImpl implements IProductService {
         validateDoubleNotNegative(newPrice,"newprice can't be negative");
         Product product=findById(id);
         product.setPrice(newPrice);
+        productDao.update(product);
         return product;
     }
 

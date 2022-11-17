@@ -10,5 +10,6 @@ public interface IProductDao {
 
     Optional<Product> findById(int id);
 
+    void update(Product product);
 
 }
