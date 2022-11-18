@@ -2,13 +2,16 @@ package demo;
 
 import java.sql.*;
 
-public class JdbcDemo2 {
+public class PreparedStatementDemo {
     private Connection connection = null;
 
-    public int startId = 12;
+    public int startId = 19;
+    private PreparedStatement findById = null;
+    private PreparedStatement insertStatement = null;
+
 
     public static void main(String args[]) {
-        JdbcDemo2 demo = new JdbcDemo2();
+        PreparedStatementDemo demo = new PreparedStatementDemo();
         demo.start();
     }
 
@@ -21,10 +24,12 @@ public class JdbcDemo2 {
             String username = "vineet", password = "scooby";
             connection = DriverManager.getConnection(url, username, password);
 
-            insert("mirazul", 24, 5000.6, "d1");
+            insert("kusuma", 25, 6000.6, "d2");
 
-            Employee found = findById(1);
-            display(found);
+            Employee found1 = findById(1);
+            Employee found2=findById(2);
+            display(found1);
+            display(found2);
 
 
         } catch (SQLException e) {
@@ -50,19 +55,40 @@ public class JdbcDemo2 {
         System.out.println(employee.getId() + " " + employee.getName() + " " + employee.getAge() + " " + employee.getSalary());
     }
 
+    PreparedStatement createInsertStatement() throws SQLException {
+        if (insertStatement != null) {
+            return insertStatement;
+        }
+        String sql = "insert into employees(id,name,age,salary,did) values(?,?,?,?,?)";
+        insertStatement = connection.prepareStatement(sql);
+        return insertStatement;
+    }
+
     public void insert(String name, int age, double salary, String deptId) throws SQLException {
         int id = ++startId;
-        Statement statement = connection.createStatement();
-     //   String sql = "insert into employees(id,name,age,salary,did) values(" + id + "," + "'"+name+"'" + ","  + age + "," + salary + "," + "'"+deptId + "')";
-        String sql=String.format("insert into employees(id,name,age,salary,did) values(%d,'%s',%d,%f,'%s')",id,name,age,salary,deptId);
-        int changed = statement.executeUpdate(sql);
+        PreparedStatement statement = createInsertStatement();
+        statement.setInt(1, id);
+        statement.setString(2, name);
+        statement.setInt(3, age);
+        statement.setDouble(4, salary);
+        statement.setString(5, deptId);
+        int changed = statement.executeUpdate();
         System.out.println("rows inserted=" + changed);
     }
 
+    public PreparedStatement createFindByIdStatement() throws SQLException {
+        if (findById != null) {
+            return findById;
+        }
+        String sql = "select * from employees where id= ?";
+        findById = connection.prepareStatement(sql);
+        return findById;
+    }
+
     public Employee findById(int id) throws SQLException, EmployeeNotFoundException {
-        Statement statement = connection.createStatement();
-        String sql = "select * from employees where id=" + id;
-        ResultSet resultSet = statement.executeQuery(sql);
+        PreparedStatement statement = createFindByIdStatement();
+        statement.setInt(1, id);
+        ResultSet resultSet = statement.executeQuery();
         if (!resultSet.next()) {
             throw new EmployeeNotFoundException("employee not found for id=" + id);
         }
