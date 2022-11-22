@@ -14,6 +14,5 @@ public class Application {
         System.out.println("shape set in canvas="+canvas.getShape().getClass().getSimpleName());
         canvas.drawShape();
 
-
     }
 }

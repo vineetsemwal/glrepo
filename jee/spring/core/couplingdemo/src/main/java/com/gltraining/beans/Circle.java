@@ -2,7 +2,7 @@ package com.gltraining.beans;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Circle implements IShape {
 
     private int radius;
