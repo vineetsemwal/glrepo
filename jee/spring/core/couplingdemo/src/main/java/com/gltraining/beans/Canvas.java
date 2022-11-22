@@ -2,6 +2,7 @@ package com.gltraining.beans;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,6 +20,7 @@ public class Canvas {
         this.shape =shape;
     }
 
+    @Qualifier("square")
     @Autowired
     public void setShape(IShape shape){
         this.shape = shape;
