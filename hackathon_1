@@ -42,7 +42,7 @@ IStockDao{
   
   void removeStockById(long id)
 
-  Stock findById(long id )  
+  Optional<Stock> findById(long id )  
   
   List<Stock>findAll()
   
