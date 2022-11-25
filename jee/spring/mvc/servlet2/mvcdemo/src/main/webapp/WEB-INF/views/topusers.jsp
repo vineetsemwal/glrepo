@@ -12,18 +12,18 @@
 <ul>
 
 <li>
- <a href="http://localhost:8080/profile?id=1" target="_blank"> User 1 </a>
+ <a href="profile?id=1" target="_blank"> User 1 </a>
 
  </li>
 
 <li>
- <a href="http://localhost:8080/profile?id=2" target="_blank"> User 2 </a>
+ <a href="profile?id=2" target="_blank"> User 2 </a>
 
  </li>
 
 
 <li>
- <a href="http://localhost:8080/profile?id=3" target="_blank"> User 3 </a>
+ <a href="profile?id=3" target="_blank"> User 3 </a>
 
  </li>
 

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,13 @@ public class AppController {
         ModelAndView modelAndView=new ModelAndView("home","renderCount",counter);
         return modelAndView;
 
+    }
+
+    @GetMapping("/listall")
+    public ModelAndView allUsers(){
+        Collection<User> users=store.values();
+        ModelAndView modelAndView=new ModelAndView("listusers","users",users);
+        return modelAndView;
     }
 
 
