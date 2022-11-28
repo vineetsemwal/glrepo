@@ -63,7 +63,8 @@ public class Demo2 {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
         Employee employee = new Employee(name, age, balance);
-        em.persist(employee);
+        //em.persist(employee)
+        employee=em.merge(employee);
         transaction.commit();
         em.close();
         return employee;
