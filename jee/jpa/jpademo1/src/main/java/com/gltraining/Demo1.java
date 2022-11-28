@@ -5,9 +5,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class Application {
+public class Demo1 {
     public static void main(String args[]){
-       Application demo=new Application();
+       Demo1 demo=new Demo1();
        demo.start();
 
     }
@@ -15,8 +15,8 @@ public class Application {
     public void start(){
         EntityManagerFactory emf= Persistence.createEntityManagerFactory("empms");
         EntityManager em=emf.createEntityManager();
-        EntityTransaction transaction =em.getTransaction();
-        transaction.begin();
+        EntityTransaction transaction1 =em.getTransaction();
+        transaction1.begin();
         Employee employee1=new Employee("nikhil",22,90000);
         Employee employee2=new Employee("alfayeed",23,100000);
         System.out.println("employees not added in pc");
@@ -37,9 +37,15 @@ public class Application {
         display(employee1);
         display(employee2);
 
-        transaction.commit();
+        transaction1.commit();
 
-        em.close();
+        EntityTransaction transaction2=em.getTransaction();
+        transaction2.begin();
+        employee1.setAge(24);
+        employee1=em.merge(employee1);
+
+        transaction2.commit();
+
         emf.close();
     }
 
