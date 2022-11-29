@@ -43,4 +43,23 @@ public class EmployeeController {
     }
 
 
+    @GetMapping("/findproduct")
+    public ModelAndView findProduct(){
+        return new ModelAndView("findproduct");
+    }
+
+    @GetMapping("/processAddProduct")
+    public ModelAndView addProduct(@RequestParam String name, @RequestParam double price) throws  Exception{
+        Product product=service.addProduct(name,price);
+        ModelAndView modelAndView=new ModelAndView("product","product",product);
+        return modelAndView;
+    }
+
+
+    @GetMapping("/addproduct")
+    public  ModelAndView addProduct(){
+        return new ModelAndView("addproduct");
+    }
+
+
 }

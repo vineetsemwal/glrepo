@@ -18,7 +18,16 @@
 
 <div>
 
+<a href="/addproduct"> Add New Product </a>
+
+<br>
+
+<a href="/findproduct"> Find Product</a>
+
+<br>
 <a href="/allproducts" > See All Products </a>
+
+
 
 </div>
 
