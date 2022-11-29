@@ -7,6 +7,8 @@ import org.globaltrainings.springjpademo.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class FrontEnd {
     private IProductService service;
@@ -32,6 +34,10 @@ public class FrontEnd {
             System.out.println("**change price");
             Product changed=service.changePrice(id,40000);
             display(changed);
+
+            System.out.println("list products order by price");
+            List<Product> list=service.fetchProductsOrderByPrice();
+            list.stream().forEach(this::display);
 
 
         }catch (InvalidArgumentException e){

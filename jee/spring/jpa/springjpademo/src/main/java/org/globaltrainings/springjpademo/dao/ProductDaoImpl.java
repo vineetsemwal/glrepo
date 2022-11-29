@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -35,6 +37,14 @@ public class ProductDaoImpl implements IProductDao {
     public Product update(Product product) {
         product = entityManager.merge(product);
         return product;
+    }
+
+    @Override
+    public List<Product> fetchAllProductsByPrice(){
+        String queryText="from Product order by price";
+        TypedQuery<Product>query =entityManager.createQuery(queryText,Product.class);
+        List<Product>list=query.getResultList();
+        return list;
     }
 
 }

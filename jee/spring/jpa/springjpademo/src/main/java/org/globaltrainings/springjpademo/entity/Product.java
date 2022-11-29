@@ -1,9 +1,6 @@
 package org.globaltrainings.springjpademo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Table(name = "products_data")
@@ -15,6 +12,7 @@ public class Product {
     private Integer id;
     private String name;
 
+    @Column(name="product_price")
     private double price;
 
     public Product() {
