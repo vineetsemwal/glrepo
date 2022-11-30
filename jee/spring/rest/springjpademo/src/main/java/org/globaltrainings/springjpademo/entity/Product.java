@@ -1,7 +1,10 @@
 package org.globaltrainings.springjpademo.entity;
 
+import org.springframework.validation.annotation.Validated;
+
 import javax.persistence.*;
 import java.util.Objects;
+
 
 @Table(name = "products_data")
 @Entity
