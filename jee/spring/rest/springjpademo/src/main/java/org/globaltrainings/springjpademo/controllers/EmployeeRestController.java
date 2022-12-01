@@ -5,7 +5,9 @@ import org.globaltrainings.springjpademo.dto.ChangePriceRequestDto;
 import org.globaltrainings.springjpademo.dto.ProductDetails;
 import org.globaltrainings.springjpademo.entity.Product;
 import org.globaltrainings.springjpademo.service.IProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,9 +22,11 @@ public class EmployeeRestController {
 
     private IProductService service;
 
-    public EmployeeRestController(IProductService service) {
+    @Autowired
+    public EmployeeRestController(@Valid IProductService service) {
         this.service = service;
     }
+
 
 
     //    /products/add
@@ -49,7 +53,7 @@ public class EmployeeRestController {
     }
 
     @PutMapping("/change/price")
-    public ProductDetails changePrice(@RequestBody @Valid ChangePriceRequestDto requestData) throws Exception {
+    public ProductDetails changePrice(@RequestBody @Valid  ChangePriceRequestDto requestData) throws Exception {
         ProductDetails response = service.changePrice(requestData);
         return response;
     }
