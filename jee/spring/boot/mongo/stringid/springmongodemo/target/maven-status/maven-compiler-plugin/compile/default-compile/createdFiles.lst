@@ -6,7 +6,6 @@ org/globaltrainings/springmongodemo/exceptions/ProductNotFoundException.class
 org/globaltrainings/springmongodemo/service/ProductServiceImpl.class
 org/globaltrainings/springmongodemo/document/Product.class
 org/globaltrainings/springmongodemo/controllers/CentralizedExceptionHandler.class
-org/globaltrainings/springmongodemo/CustomMongoConfigurtaion.class
 org/globaltrainings/springmongodemo/dto/ChangePriceRequestDto.class
 org/globaltrainings/springmongodemo/repository/IProductRepository.class
 org/globaltrainings/springmongodemo/dto/ProductDetails.class
