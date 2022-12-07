@@ -38,7 +38,7 @@ public class ProductServiceImpl implements IProductService {
         Product product = new Product();
         String id=newId();
         product.setId(id);
-        product.setName(requestData.getName());
+        product.setName(requestData.getName().trim());
         product.setPrice(requestData.getPrice());
         product=repo.save(product);
         ProductDetails desired=util.toProductDetails(product);
@@ -47,13 +47,13 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public ProductDetails findProductDetailsById(String id) throws InvalidArgumentException, ProductNotFoundException {
-        Product product=findById(id);
+        Product product=findById(id.trim());
         ProductDetails desired=util.toProductDetails(product);
         return desired;
     }
 
     public Product findById(String id) throws InvalidArgumentException, ProductNotFoundException {
-        Optional<Product> optional = repo.findById(id);
+        Optional<Product> optional = repo.findById(id.trim());
         if(optional.isEmpty()){
             throw new ProductNotFoundException("product not found for id="+id);
         }
@@ -64,7 +64,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public ProductDetails changePrice(ChangePriceRequestDto requestData) throws InvalidArgumentException, ProductNotFoundException {
-        Product product=findById(requestData.getId());
+        Product product=findById(requestData.getId().trim());
         product.setPrice(requestData.getNewPrice());
         product= repo.save(product);
         ProductDetails desired=util.toProductDetails(product);
