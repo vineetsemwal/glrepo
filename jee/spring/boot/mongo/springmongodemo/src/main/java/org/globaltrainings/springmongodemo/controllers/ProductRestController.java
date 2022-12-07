@@ -12,12 +12,12 @@ import java.util.List;
 
 @RequestMapping("/products")
 @RestController
-public class EmployeeRestController {
+public class ProductRestController {
 
     private IProductService service;
 
     @Autowired
-    public EmployeeRestController(IProductService service) {
+    public ProductRestController(IProductService service) {
         this.service = service;
     }
 
