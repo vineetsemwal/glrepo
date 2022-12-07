@@ -22,7 +22,7 @@ public class ProductRestController {
     private IProductService service;
 
     @Autowired
-    public EmployeeRestController(IProductService service) {
+    public ProductRestController(IProductService service) {
         this.service = service;
     }
 
