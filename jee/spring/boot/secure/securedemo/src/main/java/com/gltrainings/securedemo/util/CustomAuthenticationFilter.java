@@ -46,6 +46,9 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
                 filterChain.doFilter(request, response);
                 return;
             }
+            if(token==null||token.isBlank()){
+                throw new InvalidTokenException("invalid token, can't be null or empty");
+            }
             token=token.substring(7);
 
             String username = tokenUtil.decode(token);

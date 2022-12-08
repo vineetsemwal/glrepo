@@ -25,7 +25,7 @@ public class AppSecurityConfig {
 
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        http.cors().configurationSource(corsConfiguration())
+        http.cors()//.configurationSource(corsConfiguration())
                 .and()
                 .csrf().disable().httpBasic()
                 .and()
@@ -41,7 +41,7 @@ public class AppSecurityConfig {
         return http.build();
 
     }
-
+/*
     @Bean
     public CorsConfigurationSource corsConfiguration() {
         UrlBasedCorsConfigurationSource configuration = new UrlBasedCorsConfigurationSource();
@@ -52,6 +52,6 @@ public class AppSecurityConfig {
         configuration.registerCorsConfiguration("/**", corsConfiguration);
         return configuration;
     }
-
+*/
 
 }
