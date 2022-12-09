@@ -34,4 +34,11 @@ public class CustomerController {
         return customerService.findByUserName(username);
     }
 
+
+    @GetMapping("/a/customers")
+    public List<CustomerDetails> fetchAllCustomers(){
+        return customerService.findAll();
+    }
+
+
 }

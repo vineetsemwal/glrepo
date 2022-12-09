@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -51,6 +52,12 @@ public class CustomerServiceImpl implements ICustomerService {
           throw new UsernameNotFoundException("user not found by username="+username);
       }
         return customerUtil.customerDetails(optional.get());
+    }
+
+    @Override
+    public List<CustomerDetails>findAll(){
+        List<Customer>list= customerRepo.findAll();
+        return customerUtil.toDetailsList(list);
     }
 
 
