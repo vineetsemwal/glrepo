@@ -1,9 +1,9 @@
 org/globaltrainings/springjpademo/controllers/CentralizedExceptionHandler.class
 org/globaltrainings/springjpademo/dto/AddProduct.class
 org/globaltrainings/springjpademo/DemoApplication.class
+org/globaltrainings/springjpademo/controllers/ProductRestController.class
 org/globaltrainings/springjpademo/entity/Product.class
 org/globaltrainings/springjpademo/dto/ChangePriceRequestDto.class
-org/globaltrainings/springjpademo/controllers/EmployeeRestController.class
 org/globaltrainings/springjpademo/service/IProductService.class
 org/globaltrainings/springjpademo/repository/IProductRepository.class
 org/globaltrainings/springjpademo/exceptions/InvalidArgumentException.class

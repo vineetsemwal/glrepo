@@ -1,5 +1,5 @@
 /home/vineet/work/workspace/niit-globallogic/jee/spring/boot/rest/restdatajpa/springjpademo/src/main/java/org/globaltrainings/springjpademo/repository/IProductRepository.java
-/home/vineet/work/workspace/niit-globallogic/jee/spring/boot/rest/restdatajpa/springjpademo/src/main/java/org/globaltrainings/springjpademo/controllers/EmployeeRestController.java
+/home/vineet/work/workspace/niit-globallogic/jee/spring/boot/rest/restdatajpa/springjpademo/src/main/java/org/globaltrainings/springjpademo/controllers/ProductRestController.java
 /home/vineet/work/workspace/niit-globallogic/jee/spring/boot/rest/restdatajpa/springjpademo/src/main/java/org/globaltrainings/springjpademo/controllers/CentralizedExceptionHandler.java
 /home/vineet/work/workspace/niit-globallogic/jee/spring/boot/rest/restdatajpa/springjpademo/src/main/java/org/globaltrainings/springjpademo/dto/ProductDetails.java
 /home/vineet/work/workspace/niit-globallogic/jee/spring/boot/rest/restdatajpa/springjpademo/src/main/java/org/globaltrainings/springjpademo/service/ProductServiceImpl.java
