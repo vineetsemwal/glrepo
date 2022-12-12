@@ -1,4 +1,4 @@
-package org.globaltrainings.saleapp.service;
+package org.globaltrainings.saleapp.customerms.service;
 
 
 import org.globaltrainings.saleapp.customerms.dto.BuyProductRequest;

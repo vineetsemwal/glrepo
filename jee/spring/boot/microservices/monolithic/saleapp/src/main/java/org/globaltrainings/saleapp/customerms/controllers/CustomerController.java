@@ -3,7 +3,7 @@ package org.globaltrainings.saleapp.customerms.controllers;
 import org.globaltrainings.saleapp.customerms.dto.BuyProductRequest;
 import org.globaltrainings.saleapp.customerms.dto.CustomerDetails;
 import org.globaltrainings.saleapp.customerms.dto.RegisterCustomer;
-import org.globaltrainings.saleapp.service.ICustomerService;
+import org.globaltrainings.saleapp.customerms.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
