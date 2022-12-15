@@ -8,6 +8,7 @@ import org.globaltrainings.springjpademo.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +45,20 @@ public class ProductRestController {
         ProductDetails response = service.findProductDetailsById(id);
         return response;
     }
+
+/*
+    //     /products/byd/1
+    // 200 ok
+
+    @GetMapping("/byid/{id}")
+    public ResponseEntity<ProductDetails> fetchProductById(@PathVariable int id) throws Exception {
+        ProductDetails responseData = service.findProductDetailsById(id);
+        ResponseEntity<ProductDetails>responseEntity=new ResponseEntity<>(responseData,HttpStatus.OK);
+        return responseEntity;
+    }
+
+*/
+
 
     @GetMapping("/order/byprice")
     public List<ProductDetails> fetchAllByPrice() {
