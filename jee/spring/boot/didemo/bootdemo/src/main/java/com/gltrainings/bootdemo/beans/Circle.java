@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 //@Component
 public class Circle implements IShape {
 
+
     @Value("${circle.radius}")
     private int radius;
 

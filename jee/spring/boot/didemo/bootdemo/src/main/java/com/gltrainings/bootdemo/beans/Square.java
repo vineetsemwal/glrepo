@@ -1,5 +1,7 @@
 package com.gltrainings.bootdemo.beans;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +10,8 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class Square implements IShape {
+
+    private static final Logger LOG= LoggerFactory.getLogger(Square.class);
 
     @Value("${square.side}")
     private int side;
@@ -28,12 +32,12 @@ public class Square implements IShape {
 
     @PostConstruct
     public void  afterInit(){
-        System.out.println("inside square, already initialized, side="+side);
+        LOG.debug("inside square, already initialized, side="+side);
     }
 
     @PreDestroy
     public void beforeDestroy(){
-        System.out.println("sqaure object about to be removed from container");
+        LOG.debug("sqaure object about to be removed from container");
     }
 
 

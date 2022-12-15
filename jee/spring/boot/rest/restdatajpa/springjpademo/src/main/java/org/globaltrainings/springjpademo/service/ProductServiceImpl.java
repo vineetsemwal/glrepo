@@ -51,6 +51,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     public Product findById(int id) throws InvalidArgumentException, ProductNotFoundException {
+        System.out.println("**inside findById(*),id="+id);
         Optional<Product> optional = repo.findById(id);
         if(optional.isEmpty()){
             throw new ProductNotFoundException("product not found for id="+id);

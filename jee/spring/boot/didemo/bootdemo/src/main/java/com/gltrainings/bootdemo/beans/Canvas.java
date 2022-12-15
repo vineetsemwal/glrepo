@@ -1,6 +1,8 @@
 package com.gltrainings.bootdemo.beans;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +12,8 @@ import javax.annotation.PreDestroy;
 //@Scope("prototype")
 @Component
 public class Canvas {
+
+    private static final Logger LOG = LoggerFactory.getLogger(Canvas.class);
 
 
     private IShape shape;
@@ -35,19 +39,19 @@ public class Canvas {
 
 
     public void drawShape() {
-        System.out.println(shape.getClass().getSimpleName() + "getting drawn with area=" + shape.area());
+        LOG.debug(shape.getClass().getSimpleName() + "getting drawn with area=" + shape.area());
     }
 
     @PostConstruct
     public void afterInit(){
-        System.out.println("Inside canvas, afterinitialize, shape set= "+shape.getClass().getSimpleName());
+        LOG.debug("Inside canvas, afterinitialize, shape set= "+shape.getClass().getSimpleName());
     }
 
 
 
     @PreDestroy
     public void beforeDestroy(){
-        System.out.println("Canvas object about to be removed from container");
+        LOG.debug("Canvas object about to be removed from container");
     }
 
 
