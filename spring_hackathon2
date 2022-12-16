@@ -1,0 +1,130 @@
+Case study for online video sharing
+
+Spring boot , microservices 
+
+Use Jpa Repoistory
+
+Database : any sql database
+
+Add spring cloud features like service Discovery after testing everything is working
+
+Open rest endpoins
+
+Channel module -Microservice 1
+
+MediaChannel{
+
+id:Long
+
+name: String
+
+createdBy : String
+
+
+}
+
+IChannelService{
+
+ChannelDetails create(CreateChannel requestDTO)
+
+ChannelDetails changeName(ChangeName requestDTO) 
+
+
+}
+
+Open rest endpoints 
+
+1) Create Channel
+
+2) Change Channel name
+
+Validations
+
+1) name must be between 3 letters and 20 letters
+
+2) created By must be between 2 and 15 letters 
+
+3) id should be greater than zero
+
+
+Media module-- Microsrevice 2
+
+Video{
+id: Long
+
+widthResolution: integer
+
+heightResolution: integer
+
+uploadedTo: Long /// mediaChannel id
+
+name: String
+
+title: String
+}
+
+IMediaService{
+
+MediaDetails upload(UploadRequest requestDTO )
+
+MediaDetails changeName(ChangeName requestDTO)
+
+List<MediaDetails>findMediasByChannel(long channelID)
+
+boolean removeMedia(long mediaId)
+
+}
+
+
+Open rest endpoints
+
+1) Upload media
+
+2) Change name
+
+3) find medias for channel
+
+4) remove media
+
+Validations
+
+1) media id greater than zero
+
+2) name length should be between 5 and 20
+
+3) width resolution can be 480, 640, 1080  
+4) height resolution can be 620, 760, 1400
+
+
+
+
+
+
+
+
+
+
+ 
+
+----not required for hackathon , complete later ----
+
+Subscriber module
+
+
+Module2
+
+
+Subscriber{
+
+id: Long
+
+firstName:String
+
+lastName: String
+
+subscribedTo: List<Long> //subscriptions
+
+
+}
+
+
