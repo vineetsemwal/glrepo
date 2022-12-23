@@ -1,0 +1,95 @@
+
+Use containerization concept so that can be delivered to operation team easily, operation team will not have to spend time in configurng machine for the app
+
+
+Use docker compose
+container 1 contains your app
+container2 contains application database
+
+
+use spring boot
+spring Jpa Repository
+database : postgres
+
+
+
+openRest endpoints
+
+Stock Management system
+
+Use HashMap<Long, Stock> for storage
+
+Use Stream Api
+
+Do in 2 sprints 
+
+1) only corejava // create commit after finishing
+2) with spring DI // create commit after spring DI use
+
+groupid : com.gltraining
+artifactid: stockms
+
+base package: com.gltrianing.stockms 
+
+
+
+Entity
+
+Stock{
+
+long id
+
+String name // unique
+
+double price
+
+int quantity
+
+StockType stockType // StockType enum values are CEMENT, TILE, BRICK, STEEL
+
+}
+
+
+
+
+IStockDao{
+ void add(Stock stock)
+
+  Stock update(Stock stock)
+  
+  void removeStockById(long id)
+
+  Optional<Stock> findById(long id )  
+  
+  List<Stock>findAll()
+  
+}
+
+
+IStockService{
+
+Stock add(String name, StockType stockType, double price, int quantity)
+
+Stock updateQuantity(String name, int quantity)
+
+void removeStockById(long id)
+
+Stock findById(long id )
+
+Stock findByName(String name)
+
+List<Stock> findStocksGreaterThanPriceInAscendingOrderPrice(double price)
+
+List<Stock>findAllStocksByTypeInAscendingOrderPrice(StockType stockType)
+
+}
+
+
+Validations
+name can't be smaller than 2 letters and can't be grater than 15 letters
+id can't be smaller than 1
+price can't be negative
+quantity can't negative
+
+
+
