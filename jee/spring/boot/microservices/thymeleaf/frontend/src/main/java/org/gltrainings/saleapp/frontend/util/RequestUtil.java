@@ -13,15 +13,15 @@ import java.util.stream.Stream;
 @Component
 public class RequestUtil {
 
-    @Value("${product.backendurl}")
-    private String baseProductBackendUrl;
+    @Value("${gateway.url}")
+    private String gatewayUrl;
 
     @Autowired
     private RestTemplate restTemplate;
 
 
     public List<ProductDetails> fetchAllProductsByPrice() {
-        String url = baseProductBackendUrl + "/products/order/byprice";
+        String url = gatewayUrl + "/products/order/byprice";
         ProductDetails array[]=restTemplate.getForObject(url,ProductDetails[].class );
         List<ProductDetails>list= Stream.of(array).collect(Collectors.toList());
         return list;
