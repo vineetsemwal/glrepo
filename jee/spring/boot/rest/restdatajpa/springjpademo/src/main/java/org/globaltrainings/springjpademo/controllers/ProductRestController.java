@@ -33,8 +33,7 @@ public class ProductRestController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ProductDetails add(@RequestBody AddProduct requestData) throws Exception {
-        ProductDetails response = service.addProduct(requestData);
-        return response;
+       return service.addProduct(requestData);
     }
 
 

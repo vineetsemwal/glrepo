@@ -38,8 +38,7 @@ public class ProductServiceImpl implements IProductService {
         product.setName(requestData.getName());
         product.setPrice(requestData.getPrice());
         product=repo.save(product);
-        ProductDetails desired=util.toProductDetails(product);
-        return desired;
+        return util.toProductDetails(product);
     }
 
     @Transactional(readOnly = true)
@@ -78,5 +77,6 @@ public class ProductServiceImpl implements IProductService {
       List<ProductDetails>desired=util.toProductDetailsList(products);
       return desired;
     }
+
 
 }
