@@ -10,13 +10,13 @@ spring:
     gateway:
       routes:
         - id: service_product
-          uri: http://localhost:8585
+          uri: lb://productms
           predicates:
             - Path= /products/**
 
 
         - id: service_customer
-          uri: http://localhost:8586
+          uri: lb://customerms
           predicates:
             - Path= /customers/**
 
