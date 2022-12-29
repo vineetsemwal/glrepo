@@ -1,0 +1,11 @@
+1) create a public db, which you can access from
+your local application
+
+2)create a private database in vpc, 
+access it from ec2 machine
+
+3)create a welcome page(index.html) in your springboot application where you can use images uploaded in bucket
+bucket -- upload images
+
+in index.html of springboot app, use   <image src="imageurl" />
+
